@@ -1,10 +1,15 @@
-
+// We need to declare functions BEFORE using them
+// (will throw an error otherwise)
 
 const writeHeader = function(title) {
     console.log(`\n\n]>-------------<[ ${title.toUpperCase()} ]>-------------<[`)
 }
 
 writeHeader("Switch-case")
+
+
+//-------- THE LESSON ACTUALLY STARTED FROM DOWN HERE --------------------
+//-------- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv --------------------
 
 let userName = "Rafael"
 
@@ -63,7 +68,9 @@ console.log(dilatedString)
 // --------------- SCOPE OF A VARIABLE ---------------
 // a variable only exists in its enclosing brackets (scope)
 
- if (true) 
+writeHeader("SCOPE OF A VARIABLE")
+
+if (true) 
 // else
 // while
 // for
@@ -73,10 +80,6 @@ console.log(dilatedString)
 } // As soon as we leave this BLOCK OF CODE {}, all variables declared inside of it will disappear
 
 // console.log(scopedVariable) <<--- this line will throw an error: ReferenceError: scopedVariable is not defined
-
-for (let i = 0; i < 5; i++) {
-    console.log(i)
-}
 
 
 // --------------- LET VS CONST ---------------
@@ -102,6 +105,7 @@ const myMutableObject = {
 myMutableObject.name = "Harry" // CONST doesn't prevent me to modify the object (or array) itself
 // myMutableObject = {}   // It only prevents to change it to be ANOTHER object
 
+// --------------- STRING MANIPULATION FUNCTIONS ---------------
 writeHeader("STRING MANIPULATION FUNCTIONS")
 // More about string functions on: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 
@@ -134,8 +138,9 @@ console.log(dashedGreeting)
 
 // --------------- CREATING OUR OWN FUNCTIONS ---------------
 
+writeHeader("JOIN STRINGS THROUGH OUR OWN FUNCTION")
 const joinTwoStrings = function(firstString, secondString) {
-    let result = firstString + "<>" + secondString
+    let result = firstString + " <--> " + secondString
     return result
 }
 
