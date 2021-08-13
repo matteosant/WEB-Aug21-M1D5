@@ -55,13 +55,44 @@ console.log(dilatedString)
 
 // H e l l o
 
-greeting = `Hello Strivers`
-let modifiedString = ""
-for(let i = 0; i < greeting.length; i++){
-    modifiedString += greeting[i]
-    
-    if (i < greeting.length - 1)
-        modifiedString += `-`
+// --------------- SCOPE OF A VARIABLE ---------------
+// a variable only exists in its enclosing brackets (scope)
+
+ if (true) 
+// else
+// while
+// for
+{
+    let scopedVariable = "I'm a scoped variable, I only exist in my enclosing brackets"
+    console.log(scopedVariable)
+} // As soon as we leave this BLOCK OF CODE {}, all variables declared inside of it will disappear
+
+// console.log(scopedVariable) <<--- this line will throw an error: ReferenceError: scopedVariable is not defined
+
+for (let i = 0; i < 5; i++) {
+    console.log(i)
 }
 
-console.log(modifiedString)
+
+// --------------- LET VS CONST ---------------
+let myEverchangingVariable = "First value"
+myEverchangingVariable = "Second value"
+myEverchangingVariable = "Third value"
+
+const myFixedVariable = "InitialValue"
+// myFixedVariable = "AnotherValue" <<--- this line will throw an error: TypeError: Assignment to constant variable.
+
+// USAGE:
+// - when you need a value to be immutable
+// - for performance reasons: const consumes less memory. Prefer it when you know in advance that it wouldn't change its value
+
+var myDearOldVar = "Please don't use me anymore"
+// - AVOID using VAR. It's the old way to declare variables in JavaScript; has GLOBAL SCOPE (that's BAD)
+
+const myMutableObject = { 
+    name: "John",
+    surname: "Blox"
+ }
+
+ myMutableObject.name = "Harry" // CONST doesn't prevent me to modify the object (or array) itself
+ // myMutableObject = {}   // It only prevents to change it to be ANOTHER object
