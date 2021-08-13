@@ -47,10 +47,21 @@ for (let i = 0; i < helloStriversString.length; i++) {
     if (currentCharacter === "i")
         break
 
-    console.log(currentCharacter, " ")
+    console.log(currentCharacter)
     dilatedString += currentCharacter + "   "
 }
 
 console.log(dilatedString)
 
 // H e l l o
+
+greeting = `Hello Strivers`
+let modifiedString = ""
+for(let i = 0; i < greeting.length; i++){
+    modifiedString += greeting[i]
+    
+    if (i < greeting.length - 1)
+        modifiedString += `-`
+}
+
+console.log(modifiedString)
