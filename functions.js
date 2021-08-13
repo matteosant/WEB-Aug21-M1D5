@@ -29,7 +29,7 @@ switch(userName)
 console.log("A new user joined.", greeting)
 
 
-console.log(">-------------< STRING MANIPULATION FUNCTIONS >-------------<")
+console.log(">-------------< STRING MANIPULATION >-------------<")
 
 let helloStriversString = "Hello Strivers" // We can access individual characters as if it were an array
                     //     0123456789   <-- these are the indexes
@@ -94,5 +94,33 @@ const myMutableObject = {
     surname: "Blox"
  }
 
- myMutableObject.name = "Harry" // CONST doesn't prevent me to modify the object (or array) itself
- // myMutableObject = {}   // It only prevents to change it to be ANOTHER object
+myMutableObject.name = "Harry" // CONST doesn't prevent me to modify the object (or array) itself
+// myMutableObject = {}   // It only prevents to change it to be ANOTHER object
+
+console.log(">-------------< STRING MANIPULATION FUNCTIONS >-------------<")
+// More about string functions on: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+
+console.log(">-------------< TO UPPER/LOWER CASE >-------------<")
+let welcomeYell = greeting.toUpperCase()
+console.log(welcomeYell)
+
+let whisperYell = greeting.toLowerCase()
+console.log(whisperYell)
+
+console.log(">-------------< FINDING THE FIRST OCCURRENCE OF A SUBSTRING >-------------<")
+let indexOfRaf = greeting.indexOf("Raf")
+console.log(indexOfRaf)
+
+console.log(">-------------< GETTING A SUBSTRING >-------------<")
+let extractedName = greeting.slice(9, 15)
+console.log(extractedName)
+
+
+console.log(">-------------< SPLIT INTO SEVERAL STRINGS >-------------<")
+let splittedStrings = greeting.split(" ")
+console.log(splittedStrings)
+
+
+console.log(">-------------< JOIN THEM BACK >-------------<")
+let dashedGreeting = splittedStrings.join("---")
+console.log(dashedGreeting)
