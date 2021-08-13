@@ -1,5 +1,10 @@
 
-console.log(">-------------< SWITCH-CASE >-------------<")
+
+const writeHeader = function(title) {
+    console.log(`\n\n]>-------------<[ ${title.toUpperCase()} ]>-------------<[`)
+}
+
+writeHeader("Switch-case")
 
 let userName = "Rafael"
 
@@ -29,7 +34,7 @@ switch(userName)
 console.log("A new user joined.", greeting)
 
 
-console.log(">-------------< STRING MANIPULATION >-------------<")
+writeHeader("STRING MANIPULATION")
 
 let helloStriversString = "Hello Strivers" // We can access individual characters as if it were an array
                     //     0123456789   <-- these are the indexes
@@ -97,30 +102,47 @@ const myMutableObject = {
 myMutableObject.name = "Harry" // CONST doesn't prevent me to modify the object (or array) itself
 // myMutableObject = {}   // It only prevents to change it to be ANOTHER object
 
-console.log(">-------------< STRING MANIPULATION FUNCTIONS >-------------<")
+writeHeader("STRING MANIPULATION FUNCTIONS")
 // More about string functions on: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 
-console.log(">-------------< TO UPPER/LOWER CASE >-------------<")
+writeHeader("TO UPPER/LOWER CASE")
 let welcomeYell = greeting.toUpperCase()
 console.log(welcomeYell)
 
 let whisperYell = greeting.toLowerCase()
 console.log(whisperYell)
 
-console.log(">-------------< FINDING THE FIRST OCCURRENCE OF A SUBSTRING >-------------<")
+writeHeader("FINDING THE FIRST OCCURRENCE OF A SUBSTRING")
 let indexOfRaf = greeting.indexOf("Raf")
 console.log(indexOfRaf)
 
-console.log(">-------------< GETTING A SUBSTRING >-------------<")
+writeHeader("GETTING A SUBSTRING")
 let extractedName = greeting.slice(9, 15)
 console.log(extractedName)
 
 
-console.log(">-------------< SPLIT INTO SEVERAL STRINGS >-------------<")
+writeHeader("SPLIT INTO SEVERAL STRINGS")
 let splittedStrings = greeting.split(" ")
 console.log(splittedStrings)
 
 
-console.log(">-------------< JOIN THEM BACK >-------------<")
+writeHeader("JOIN THEM BACK")
 let dashedGreeting = splittedStrings.join("---")
 console.log(dashedGreeting)
+
+
+
+// --------------- CREATING OUR OWN FUNCTIONS ---------------
+
+const joinTwoStrings = function(firstString, secondString) {
+    let result = firstString + "<>" + secondString
+    return result
+}
+
+let joinedString = joinTwoStrings("Hi", "Zee")
+console.log(joinedString)
+
+joinedString = joinTwoStrings("Hello", "Matteo")
+console.log(joinedString)
+
+console.log(joinTwoStrings("Hi", "Rashmi"))
